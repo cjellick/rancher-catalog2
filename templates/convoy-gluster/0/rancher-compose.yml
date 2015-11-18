@@ -22,9 +22,9 @@
      - variable: "HOST_LABEL"
        label: "Host label"
        description: "Specify a Rancher host label here that will be used to determine where the convoy-gluster service is deploy. This will determine what hosts can access the volumes managed by this stack."
-      type: "string"
-      default: convoy.gluster=true
-      required: true
+       type: "string"
+       default: convoy.gluster=true
+       required: true
 convoy-gluster:
     metadata:
         volume_pool: "${VOLUME_POOL}"
