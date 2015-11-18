@@ -1,8 +1,8 @@
 convoy-gluster:
     labels:
-        io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=convoy-gluster
         io.rancher.container.create_agent: 'true'
         io.rancher.scheduler.global: 'true'
+        io.rancher.scheduler.affinity:host_label_soft: ${HOST_LABEL}
     privileged: true
     working_dir: /storage
     volumes:
@@ -15,4 +15,5 @@ convoy-gluster:
 convoy-gluster-storagepool:
     labels:
       io.rancher.container.create_agent: 'true'
+      io.rancher.scheduler.affinity:host_label_soft: ${HOST_LABEL}
     image: rancher/convoy-gluster-storagepool-agent:v0.1.0-rc1
