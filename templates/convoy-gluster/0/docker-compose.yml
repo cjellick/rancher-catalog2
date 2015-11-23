@@ -11,7 +11,7 @@ convoy-gluster:
     external_links:
         - "${GLUSTERFS_SERVICE}:glusterfs"
     image: cjellick/convoy-agent:dev17
-    command: volume-agent
+    command: volume-agent-glusterfs
 
 convoy-gluster-storagepool:
     labels:
