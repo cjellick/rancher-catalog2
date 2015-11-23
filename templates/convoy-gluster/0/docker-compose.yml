@@ -4,9 +4,11 @@ convoy-gluster:
         io.rancher.scheduler.global: 'true'
         io.rancher.scheduler.affinity:host_label_soft: ${HOST_LABEL}
     privileged: true
+    pid: host
     volumes:
         - /proc:/host/proc
         - /var/lib/rancher/convoy:/var/lib/rancher/convoy
+        - /run:/host/run
         - /etc/docker/plugins:/etc/docker/plugins
     external_links:
         - "${GLUSTERFS_SERVICE}:glusterfs"
